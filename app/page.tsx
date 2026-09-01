@@ -24,7 +24,7 @@ const ventures = [
       "Exploring clean-energy solutions that help homes, businesses and communities move toward a more sustainable future.",
     icon: "☀️",
     href: "/solar-energy",
-    image: "/solar.jpg",
+    image: "/Solar.jpg",
   },
   {
     number: "03",
