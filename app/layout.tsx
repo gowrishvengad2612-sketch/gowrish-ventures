@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Mushroom Pannai",
+  title: "Gowrish Vengad",
   description: "Modern mushroom agriculture venture",
 };
 
