@@ -1,35 +1,36 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef } from "react";
 
 export default function CustomCursor() {
-  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const cursorRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const moveCursor = (e: MouseEvent) => {
-      setPosition({
-        x: e.clientX,
-        y: e.clientY,
-      });
+    const moveCursor = (e: PointerEvent) => {
+      if (cursorRef.current) {
+        cursorRef.current.style.left = `${e.clientX}px`;
+        cursorRef.current.style.top = `${e.clientY}px`;
+      }
     };
 
-    window.addEventListener("mousemove", moveCursor);
+    window.addEventListener("pointermove", moveCursor);
 
     return () => {
-      window.removeEventListener("mousemove", moveCursor);
+      window.removeEventListener("pointermove", moveCursor);
     };
   }, []);
 
   return (
     <div
-      className="fixed pointer-events-none z-[99999]"
+      ref={cursorRef}
+      className="fixed pointer-events-none z-[999999]"
       style={{
-        left: position.x,
-        top: position.y,
+        left: "0px",
+        top: "0px",
         transform: "translate(-50%, -50%)",
       }}
     >
-      {/* Outer brown circle */}
+      {/* Outer circle */}
       <div
         className="w-8 h-8 rounded-full border-2"
         style={{
@@ -37,7 +38,7 @@ export default function CustomCursor() {
         }}
       />
 
-      {/* Center brown dot */}
+      {/* Center dot */}
       <div
         className="absolute top-1/2 left-1/2 w-2 h-2 rounded-full"
         style={{
@@ -47,4 +48,4 @@ export default function CustomCursor() {
       />
     </div>
   );
-}
+} 
