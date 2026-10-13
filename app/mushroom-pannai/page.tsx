@@ -33,7 +33,7 @@
     <div
       className="absolute inset-0 bg-cover bg-center"
       style={{
-        backgroundImage: "url('/mushroom.jpg')",
+        backgroundImage: "url('/mushroom.png')",
       }}
     />
 

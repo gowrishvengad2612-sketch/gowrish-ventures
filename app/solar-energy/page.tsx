@@ -154,7 +154,7 @@ export default function SolarEnergy() {
 
   {/* Full Landscape Solar Image */}
   <Image
-    src="/Solar.jpg"
+    src="/solar-image.jpg"
     alt="Solar Energy"
     fill
     priority

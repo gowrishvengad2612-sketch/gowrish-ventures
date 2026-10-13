@@ -14,7 +14,7 @@ const ventures = [
       "A modern agricultural venture focused on mushroom cultivation, sustainable farming and creating practical opportunities through agriculture.",
     icon: "🍄",
     href: "/mushroom-pannai",
-    image: "/mushroom.jpg",
+    image: "/mushroom.png",
   },
   {
     number: "02",
@@ -24,7 +24,7 @@ const ventures = [
       "Exploring clean-energy solutions that help homes, businesses and communities move toward a more sustainable future.",
     icon: "☀️",
     href: "/solar-energy",
-    image: "/Solar.jpg",
+    image: "/solar-image.jpg",
   },
   {
     number: "03",
@@ -48,12 +48,19 @@ export default function Home() {
       <nav className="fixed top-0 z-50 w-full border-b border-black/10 bg-white/90 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
 
-          <a
-            href="#home"
-            className="text-xl font-bold tracking-tight"
-          >
-            GOWRISH<span className="text-black/40">.</span>
-          </a>
+          
+<a
+  href="#home"
+  className="inline-flex items-center gap-1 text-xl font-bold tracking-tight"
+>
+  GOWRISH<span className="text-black/40"> </span>
+  <img
+    src="/gv.png"
+    alt="Gowrish logo"
+    className="h-7 w-7 object-contain"
+  />
+</a>
+
 
           {/* DESKTOP NAVIGATION */}
           <div className="hidden items-center gap-8 text-sm text-black/60 md:flex">
@@ -183,13 +190,13 @@ export default function Home() {
           </div>
 
 
+          
+
           {/* RIGHT SIDE PHOTO */}
           <div className="w-full lg:w-[42%]">
-
             <div className="relative mx-auto aspect-[4/5] w-full max-w-[320px] overflow-hidden rounded-[2rem] border border-black/10 shadow-xl sm:max-w-[420px] lg:max-w-[520px]">
-
               <Image
-                src="/cb.PNG.jpg"
+                src="/Gowrish-photo.jpeg"
                 alt="Gowrish Vengad"
                 fill
                 priority
@@ -197,12 +204,20 @@ export default function Home() {
                 className="object-cover object-center"
               />
 
+              {/* LIVE BADGE */}
+              <div className="absolute bottom-4 right-4 z-10 flex items-center gap-2 rounded-full border border-white/20 bg-black/70 px-4 py-2 text-white shadow-lg backdrop-blur-md">
+                <span className="relative flex h-3 w-3">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75" />
+                  <span className="relative inline-flex h-3 w-3 animate-pulse rounded-full bg-green-500" />
+                </span>
+                <span className="text-xs font-semibold uppercase tracking-[0.2em]">
+                  Live
+                </span>
+              </div>
             </div>
-
           </div>
 
-        </div>
-
+        </div> {/* CLOSE HERO CONTENT CONTAINER */}
 
         {/* BOTTOM LEFT N */}
         <div className="absolute bottom-5 left-6 flex h-12 w-12 items-center justify-center rounded-full border border-black/40 text-lg font-medium">
@@ -210,6 +225,7 @@ export default function Home() {
         </div>
 
       </section>
+
 
 
       {/* ABOUT */}
